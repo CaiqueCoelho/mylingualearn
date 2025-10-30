@@ -192,9 +192,9 @@ This section provides step-by-step instructions to set up Firebase for local dev
 
 1. Click the gear icon ⚙️ > **Project settings**
 2. Scroll down to "Your apps" > **Web**
-3. Click "</>" to add a web app
+3. Click "</>" to add a web app (if you haven't already)
 4. App nickname: **MyLinguaLearn**
-5. Copy the `firebaseConfig` object
+5. Copy the `firebaseConfig` object values
 
 You should see something like this:
 
@@ -219,11 +219,11 @@ const firebaseConfig = {
 cp .env.example .env
 ```
 
-2. Open `.env` and fill in your Firebase credentials:
+2. Open `.env` and fill in your Firebase credentials with the values from Step 5:
 
 ```env
 # Firebase Configuration
-VITE_FIREBASE_API_KEY=your_api_key_here
+VITE_FIREBASE_API_KEY=AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
 VITE_FIREBASE_DATABASE_URL=https://your-project.firebaseio.com
 VITE_FIREBASE_PROJECT_ID=your-project-id
@@ -238,11 +238,17 @@ VITE_NEWSDATA_API_KEY=pub_855fb746da0e4fc99115fd9551c3e0cb
 
 3. Replace all placeholder values with your actual Firebase configuration values from Step 5.
 
-**Important:** Never commit your `.env` file to version control. It's already in `.gitignore`.
+**Important:** 
+- Never commit your `.env` file to version control. It's already in `.gitignore`.
+- The `.env` file must be in the project root directory (same level as `package.json`).
+- After creating or updating `.env`, restart your development server for changes to take effect.
 
 ### Step 7: Verify Configuration
 
-The Firebase configuration is automatically loaded from environment variables in `client/src/services/firebaseConfig.ts`. Make sure your `.env` file is in the project root directory.
+The Firebase configuration is automatically loaded from environment variables in `client/src/services/firebaseConfig.ts`. Make sure:
+- Your `.env` file is in the project root directory
+- All `VITE_FIREBASE_*` variables are set correctly
+- You've restarted the dev server after creating/updating `.env`
 
 ## ▶️ Running the Project
 
