@@ -89,8 +89,8 @@ Complete PWA platform for learning English through reading real news articles, w
 
 - **Node.js** 18+ and pnpm
 - **Firebase Account** (free Spark plan)
+- **NewsData.io API Key** (free plan: 200 credits/day)
 - **Chrome/Edge** (for experimental Chrome AI APIs)
-- **NewsData.io API Key** (included: `pub_855fb746da0e4fc99115fd9551c3e0cb`)
 
 ## 🚀 Installation
 
@@ -211,7 +211,17 @@ const firebaseConfig = {
 };
 ```
 
-### Step 6: Configure Environment Variables
+### Step 6: Get NewsData.io API Key
+
+1. Go to https://newsdata.io/
+2. Sign up for a free account (or log in if you already have one)
+3. Navigate to your dashboard
+4. Find your API key (it starts with `pub_`)
+5. The free plan includes 200 credits per day
+
+**Note:** A default API key is included in `.env.example` for quick setup, but you should get your own for production use.
+
+### Step 7: Configure Environment Variables
 
 1. Copy the example environment file:
 
@@ -219,7 +229,7 @@ const firebaseConfig = {
 cp .env.example .env
 ```
 
-2. Open `.env` and fill in your Firebase credentials with the values from Step 5:
+2. Open `.env` and fill in your Firebase credentials with the values from Step 5, and your NewsData.io API key from Step 6:
 
 ```env
 # Firebase Configuration
@@ -232,18 +242,19 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=123456789012
 VITE_FIREBASE_APP_ID=1:123456789012:web:abcdef123456
 VITE_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
 
-# NewsData.io API (optional - included default key)
-VITE_NEWSDATA_API_KEY=pub_855fb746da0e4fc99115fd9551c3e0cb
+# NewsData.io API - Get your key from https://newsdata.io/
+# Free plan: 200 credits/day
+VITE_NEWSDATA_API_KEY=pub_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-3. Replace all placeholder values with your actual Firebase configuration values from Step 5.
+3. Replace all placeholder values with your actual Firebase configuration values from Step 5 and your NewsData.io API key from Step 6.
 
 **Important:** 
 - Never commit your `.env` file to version control. It's already in `.gitignore`.
 - The `.env` file must be in the project root directory (same level as `package.json`).
 - After creating or updating `.env`, restart your development server for changes to take effect.
 
-### Step 7: Verify Configuration
+### Step 8: Verify Configuration
 
 The Firebase configuration is automatically loaded from environment variables in `client/src/services/firebaseConfig.ts`. Make sure:
 - Your `.env` file is in the project root directory
@@ -376,8 +387,9 @@ Check:
 ### News not loading
 
 Check:
-- NewsData.io API key is correct
-- Daily limit of 200 requests not reached
+- NewsData.io API key is correct in `.env`
+- You've signed up at https://newsdata.io/ and obtained your own API key
+- Daily limit of 200 credits not reached (check your NewsData.io dashboard)
 - Firebase is configured correctly
 
 ### Chrome Runs not working

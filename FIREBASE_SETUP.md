@@ -1,64 +1,75 @@
-# Configuração do Firebase para MyLinguaLearn
+# Firebase Configuration for MyLinguaLearn
 
-## 0. Configurar Variáveis de Ambiente
+## 0. Configure Environment Variables
 
-Antes de começar, você precisa configurar as credenciais do Firebase em um arquivo `.env`.
+Before starting, you need to configure Firebase credentials in a `.env` file.
 
-### Passo 1: Criar Arquivo .env
+### Step 1: Create .env File
 
-1. Na raiz do projeto, copie o arquivo de exemplo:
+1. In the project root, copy the example file:
 
 ```bash
 cp .env.example .env
 ```
 
-### Passo 2: Obter Credenciais do Firebase
+### Step 2: Get Firebase Credentials
 
-1. Acesse https://console.firebase.google.com
-2. Selecione seu projeto (ou crie um novo)
-3. Clique no ícone de engrenagem ⚙️ > **Project settings**
-4. Role até "Your apps" > **Web**
-5. Se você já tem um app web, clique nele para ver as configurações
-6. Se não tem, clique em "</>" para adicionar um novo app web
-7. Copie os valores do objeto `firebaseConfig`
+1. Go to https://console.firebase.google.com
+2. Select your project (or create a new one)
+3. Click the gear icon ⚙️ > **Project settings**
+4. Scroll to "Your apps" > **Web**
+5. If you already have a web app, click on it to see the settings
+6. If you don't, click "</>" to add a new web app
+7. Copy the values from the `firebaseConfig` object
 
-### Passo 3: Preencher o Arquivo .env
+### Step 3: Get NewsData.io API Key
 
-Abra o arquivo `.env` e substitua os valores placeholder pelos valores reais do Firebase:
+1. Go to https://newsdata.io/
+2. Sign up for a free account (or log in if you already have one)
+3. Navigate to your dashboard
+4. Find your API key (it starts with `pub_`)
+5. The free plan includes 200 credits per day, which is sufficient for development and testing
+
+**Note:** A default API key is included in `.env.example` for quick setup, but you should get your own for production use.
+
+### Step 4: Fill the .env File
+
+Open the `.env` file and replace the placeholder values with your actual Firebase and NewsData.io credentials:
 
 ```env
 # Firebase Configuration
 VITE_FIREBASE_API_KEY=AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-VITE_FIREBASE_AUTH_DOMAIN=seu-projeto.firebaseapp.com
-VITE_FIREBASE_DATABASE_URL=https://seu-projeto.firebaseio.com
-VITE_FIREBASE_PROJECT_ID=seu-projeto-id
-VITE_FIREBASE_STORAGE_BUCKET=seu-projeto.firebasestorage.app
+VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+VITE_FIREBASE_DATABASE_URL=https://your-project.firebaseio.com
+VITE_FIREBASE_PROJECT_ID=your-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
 VITE_FIREBASE_MESSAGING_SENDER_ID=123456789012
 VITE_FIREBASE_APP_ID=1:123456789012:web:abcdef123456
 VITE_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
 
-# NewsData.io API (opcional - chave padrão incluída)
-VITE_NEWSDATA_API_KEY=pub_855fb746da0e4fc99115fd9551c3e0cb
+# NewsData.io API - Get your key from https://newsdata.io/
+# Free plan: 200 credits/day
+VITE_NEWSDATA_API_KEY=pub_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-**Importante:**
-- Nunca faça commit do arquivo `.env` - ele já está no `.gitignore`
-- O arquivo `.env` deve estar na raiz do projeto (mesmo nível que `package.json`)
-- Após criar ou atualizar o `.env`, reinicie o servidor de desenvolvimento
+**Important:**
+- Never commit the `.env` file - it's already in `.gitignore`
+- The `.env` file must be in the project root (same level as `package.json`)
+- After creating or updating `.env`, restart the development server
 
-## 1. Configurar Regras de Segurança e Índices
+## 1. Configure Security Rules and Indexes
 
-Acesse o Firebase Console: https://console.firebase.google.com
+Go to Firebase Console: https://console.firebase.google.com
 
-### Passo 1: Ir para Realtime Database
+### Step 1: Go to Realtime Database
 
-1. Selecione seu projeto: **alertu-1546021902504**
-2. No menu lateral, clique em **Realtime Database**
-3. Clique na aba **Rules** (Regras)
+1. Select your project: **alertu-1546021902504**
+2. In the sidebar, click **Realtime Database**
+3. Click the **Rules** tab
 
-### Passo 2: Copiar e Colar as Regras
+### Step 2: Copy and Paste Rules
 
-Copie o conteúdo do arquivo `firebase-rules.json` e cole no editor de regras:
+Copy the contents from the `firebase-rules.json` file and paste into the rules editor:
 
 ```json
 {
@@ -98,49 +109,49 @@ Copie o conteúdo do arquivo `firebase-rules.json` e cole no editor de regras:
 }
 ```
 
-### Passo 3: Publicar as Regras
+### Step 3: Publish Rules
 
-Clique no botão **Publish** (Publicar) para aplicar as regras.
+Click the **Publish** button to apply the rules.
 
-## 2. Configurar Authentication
+## 2. Configure Authentication
 
-### Passo 1: Ir para Authentication
+### Step 1: Go to Authentication
 
-1. No menu lateral, clique em **Authentication**
-2. Clique na aba **Sign-in method**
+1. In the sidebar, click **Authentication**
+2. Click the **Sign-in method** tab
 
-### Passo 2: Habilitar Provedores
+### Step 2: Enable Providers
 
-Habilite os seguintes métodos de autenticação:
+Enable the following authentication methods:
 
 1. **Email/Password**
-   - Clique em "Email/Password"
-   - Ative o toggle "Enable"
-   - Clique em "Save"
+   - Click "Email/Password"
+   - Toggle "Enable" on
+   - Click "Save"
 
 2. **Google**
-   - Clique em "Google"
-   - Ative o toggle "Enable"
-   - Adicione um email de suporte do projeto
-   - Clique em "Save"
+   - Click "Google"
+   - Toggle "Enable" on
+   - Add a project support email
+   - Click "Save"
 
-3. **Anonymous** (para modo visitante)
-   - Clique em "Anonymous"
-   - Ative o toggle "Enable"
-   - Clique em "Save"
+3. **Anonymous** (for guest mode)
+   - Click "Anonymous"
+   - Toggle "Enable" on
+   - Click "Save"
 
-## 3. Verificar Configuração
+## 3. Verify Configuration
 
-Após aplicar as regras e configurar a autenticação:
+After applying the rules and configuring authentication:
 
-1. Recarregue a página do aplicativo
-2. Faça login com Google ou Email
-3. Tente acessar a página de notícias
-4. O erro de índice deve desaparecer
+1. Reload the application page
+2. Log in with Google or Email
+3. Try accessing the news page
+4. The index error should disappear
 
-## 4. Estrutura de Dados
+## 4. Data Structure
 
-O Firebase Realtime Database terá a seguinte estrutura:
+The Firebase Realtime Database will have the following structure:
 
 ```
 /
@@ -167,51 +178,69 @@ O Firebase Realtime Database terá a seguinte estrutura:
 
 ## 5. Troubleshooting
 
-### Erro: "Index not defined"
+### Error: "Index not defined"
 
-Se você ainda ver erros de índice após aplicar as regras:
+If you still see index errors after applying the rules:
 
-1. Aguarde 1-2 minutos para as regras propagarem
-2. Limpe o cache do navegador
-3. Recarregue a página
+1. Wait 1-2 minutes for the rules to propagate
+2. Clear your browser cache
+3. Reload the page
 
-### Erro: "Permission denied"
+### Error: "Permission denied"
 
-Verifique se:
+Check that:
 
-1. O usuário está autenticado (logado)
-2. As regras foram publicadas corretamente
-3. O UID do usuário corresponde ao caminho no banco
+1. The user is authenticated (logged in)
+2. The rules were published correctly
+3. The user's UID matches the database path
 
-## 6. Configuração das Variáveis de Ambiente
+### Error: "Missing App configuration value"
 
-Se você ainda não configurou as variáveis de ambiente, siga os passos na seção 0 deste documento. O arquivo `client/src/services/firebaseConfig.ts` está configurado para ler automaticamente as credenciais do Firebase a partir das variáveis de ambiente definidas no arquivo `.env`.
+If you see errors about missing Firebase configuration:
 
-### Verificando a Configuração
+1. Verify that the `.env` file exists in the project root
+2. Confirm that all `VITE_FIREBASE_*` variables are defined
+3. Make sure there are no extra spaces or quotes around values in `.env`
+4. Restart the development server after making `.env` changes
+5. Check the browser console for specific error messages
 
-Se você encontrar erros relacionados ao Firebase:
+### News Not Loading
 
-1. Verifique se o arquivo `.env` existe na raiz do projeto
-2. Confirme que todas as variáveis `VITE_FIREBASE_*` estão definidas
-3. Certifique-se de que não há espaços extras ou aspas ao redor dos valores no `.env`
-4. Reinicie o servidor de desenvolvimento após fazer alterações no `.env`
-5. Verifique o console do navegador para mensagens de erro específicas
+If news articles aren't loading:
 
-## 7. Monitoramento
+1. Verify your NewsData.io API key is correct in `.env`
+2. Check your NewsData.io dashboard for API usage and remaining credits
+3. The free plan has a limit of 200 credits per day
+4. Ensure your internet connection is working
 
-Para monitorar o uso do Firebase:
+## 6. Environment Variables Configuration
 
-1. Acesse **Realtime Database** > **Usage**
-2. Verifique:
-   - Número de leituras/escritas
-   - Armazenamento usado
-   - Conexões simultâneas
+If you haven't configured environment variables yet, follow the steps in section 0 of this document. The file `client/src/services/firebaseConfig.ts` is configured to automatically read Firebase credentials from environment variables defined in the `.env` file.
 
-## Limites do Plano Gratuito (Spark)
+### Verifying Configuration
 
-- **Armazenamento**: 1 GB
-- **Transferência**: 10 GB/mês
-- **Conexões simultâneas**: 100
+If you encounter Firebase-related errors:
 
-Se ultrapassar, considere upgrade para plano Blaze (pay-as-you-go).
+1. Verify that the `.env` file exists in the project root
+2. Confirm that all `VITE_FIREBASE_*` variables are defined
+3. Make sure there are no extra spaces or quotes around values in `.env`
+4. Restart the development server after making changes to `.env`
+5. Check the browser console for specific error messages
 
+## 7. Monitoring
+
+To monitor Firebase usage:
+
+1. Go to **Realtime Database** > **Usage**
+2. Check:
+   - Number of reads/writes
+   - Storage used
+   - Simultaneous connections
+
+## Free Plan Limits (Spark)
+
+- **Storage**: 1 GB
+- **Transfer**: 10 GB/month
+- **Simultaneous connections**: 100
+
+If you exceed these, consider upgrading to the Blaze plan (pay-as-you-go).
