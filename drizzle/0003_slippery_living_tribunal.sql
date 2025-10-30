@@ -1,0 +1,1 @@
+ALTER TABLE `articles` ADD `isScraped` boolean DEFAULT false NOT NULL;

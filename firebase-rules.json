@@ -1,0 +1,36 @@
+{
+  "rules": {
+    "articles": {
+      ".read": true,
+      ".write": "auth != null",
+      ".indexOn": ["publishedAt", "createdAt"]
+    },
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid",
+        "vocabulary": {
+          ".indexOn": ["createdAt", "nextReview"]
+        },
+        "readingHistory": {
+          ".indexOn": ["readAt", "timestamp"]
+        },
+        "activities": {
+          ".indexOn": ["timestamp"]
+        },
+        "quizResults": {
+          ".indexOn": ["completedAt"]
+        },
+        "savedArticles": {
+          ".indexOn": ["savedAt"]
+        }
+      }
+    },
+    "newsCache": {
+      ".read": true,
+      ".write": "auth != null",
+      ".indexOn": ["fetchedAt"]
+    }
+  }
+}
+

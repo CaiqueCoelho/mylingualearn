@@ -1,0 +1,45 @@
+{
+  "query": "SELECT id, title, LENGTH(body) as body_length, isScraped, source FROM articles LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2U1m8QtvRs7KSsb.root --database gEvA5pFfHJY7UujAHBKvxH --execute SELECT id, title, LENGTH(body) as body_length, isScraped, source FROM articles LIMIT 5;",
+  "rows": [
+    {
+      "id": "013eb569243c3cdee31cd4f154668857",
+      "title": "Nike Unveils Aero-FIT Performance Apparel Innovation: Cooling Technology for a Hotter World - About Nike",
+      "body_length": "102",
+      "isScraped": "0",
+      "source": "About Nike"
+    },
+    {
+      "id": "09e7e3605aaaf7b43a79f4b8e85ac743",
+      "title": "Meet the Technology Fast 50 - The Globe and Mail",
+      "body_length": "46",
+      "isScraped": "0",
+      "source": "The Globe and Mail"
+    },
+    {
+      "id": "1064aab38fcbf990b65cf699f7d0b2a6",
+      "title": "New Inflation Numbers Please Wall Street",
+      "body_length": "70",
+      "isScraped": "0",
+      "source": "Newser"
+    },
+    {
+      "id": "117ce91b34d22fb059b7c3923802a8ba",
+      "title": "Laser enrichment technology moves to next level - World Nuclear News",
+      "body_length": "66",
+      "isScraped": "0",
+      "source": "World Nuclear News"
+    },
+    {
+      "id": "1d1a2857fe090289a4eb167f28548299",
+      "title": "How the mafia uses modern technology in its operations - NBC News",
+      "body_length": "63",
+      "isScraped": "0",
+      "source": "NBC News"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tbody_length\tisScraped\tsource\n013eb569243c3cdee31cd4f154668857\tNike Unveils Aero-FIT Performance Apparel Innovation: Cooling Technology for a Hotter World - About Nike\t102\t0\tAbout Nike\n09e7e3605aaaf7b43a79f4b8e85ac743\tMeet the Technology Fast 50 - The Globe and Mail\t46\t0\tThe Globe and Mail\n1064aab38fcbf990b65cf699f7d0b2a6\tNew Inflation Numbers Please Wall Street\t70\t0\tNewser\n117ce91b34d22fb059b7c3923802a8ba\tLaser enrichment technology moves to next level - World Nuclear News\t66\t0\tWorld Nuclear News\n1d1a2857fe090289a4eb167f28548299\tHow the mafia uses modern technology in its operations - NBC News\t63\t0\tNBC News\n",
+  "stderr": "",
+  "execution_time_ms": 700
+}

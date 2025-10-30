@@ -1,0 +1,28 @@
+{
+  "hosting": {
+    "public": "dist/public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "/manifest.json",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/manifest+json"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "site": "mylingualearn"
+  }
+}

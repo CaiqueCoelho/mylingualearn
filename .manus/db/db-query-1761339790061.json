@@ -1,0 +1,9 @@
+{
+  "query": "SELECT id, title, LENGTH(body) as body_length, isScraped, sourceUrl, LEFT(body, 200) as body_preview FROM articles WHERE id = '464f24119488c0ce450' LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2U1m8QtvRs7KSsb.root --database gEvA5pFfHJY7UujAHBKvxH --execute SELECT id, title, LENGTH(body) as body_length, isScraped, sourceUrl, LEFT(body, 200) as body_preview FROM articles WHERE id = '464f24119488c0ce450' LIMIT 1;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 54
+}

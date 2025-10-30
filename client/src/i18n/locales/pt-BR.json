@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "MyLinguaLearn",
+    "tagline": "Aprenda inglês com notícias diárias"
+  },
+  "nav": {
+    "home": "Início",
+    "news": "Notícias",
+    "vocabulary": "Vocabulário",
+    "practice": "Praticar",
+    "progress": "Progresso",
+    "profile": "Perfil"
+  },
+  "onboarding": {
+    "welcome": "Bem-vindo ao MyLinguaLearn!",
+    "subtitle": "Vamos personalizar sua experiência de aprendizado",
+    "cefrLevel": "Qual é o seu nível de inglês?",
+    "goals": "Quais são seus objetivos de aprendizado?",
+    "topics": "Quais tópicos te interessam?",
+    "dailyGoal": "Quanto tempo você quer estudar por dia?",
+    "minutes": "minutos",
+    "start": "Começar"
+  },
+  "news": {
+    "title": "Notícias em Inglês",
+    "today": "Hoje",
+    "week": "Últimos 7 dias",
+    "all": "Todas",
+    "readingLevel": "Nível",
+    "readMore": "Ler artigo",
+    "listen": "Ouvir",
+    "translate": "Traduzir",
+    "saveWord": "Salvar palavra",
+    "noArticles": "Nenhum artigo disponível"
+  },
+  "article": {
+    "readMode": "Modo Leitura",
+    "listenMode": "Modo Escuta",
+    "simplify": "Simplificar",
+    "quiz": "Fazer Quiz",
+    "chat": "Conversar sobre o artigo",
+    "tapToTranslate": "Toque em qualquer palavra para traduzir"
+  },
+  "vocabulary": {
+    "title": "Meu Vocabulário",
+    "reviewDue": "Palavras para revisar",
+    "totalWords": "Total de palavras",
+    "addWord": "Adicionar palavra",
+    "word": "Palavra",
+    "translation": "Tradução",
+    "example": "Exemplo",
+    "nextReview": "Próxima revisão",
+    "review": "Revisar",
+    "delete": "Excluir",
+    "noWords": "Você ainda não salvou nenhuma palavra"
+  },
+  "quiz": {
+    "title": "Quiz de Compreensão",
+    "question": "Questão",
+    "of": "de",
+    "submit": "Enviar",
+    "next": "Próxima",
+    "finish": "Finalizar",
+    "score": "Pontuação",
+    "correct": "Correto!",
+    "incorrect": "Incorreto",
+    "retry": "Tentar novamente",
+    "explanation": "Explicação"
+  },
+  "chat": {
+    "title": "Coach de Conversação",
+    "placeholder": "Digite sua mensagem...",
+    "send": "Enviar",
+    "modes": {
+      "ask": "Pergunte-me",
+      "explain": "Explique em inglês simples",
+      "correct": "Corrija minha resposta"
+    }
+  },
+  "games": {
+    "title": "Mini-Jogos",
+    "shadowing": "Karaokê de Repetição",
+    "speedVocab": "Vocabulário Rápido",
+    "sentenceBuilder": "Construtor de Frases",
+    "play": "Jogar",
+    "score": "Pontuação",
+    "highScore": "Recorde"
+  },
+  "progress": {
+    "title": "Seu Progresso",
+    "streak": "Sequência",
+    "days": "dias",
+    "xp": "XP",
+    "accuracy": "Precisão",
+    "timeSpent": "Tempo estudado",
+    "articlesRead": "Artigos lidos",
+    "quizzesTaken": "Quizzes feitos",
+    "wordsLearned": "Palavras aprendidas"
+  },
+  "settings": {
+    "title": "Configurações",
+    "ttsSpeed": "Velocidade da fala",
+    "theme": "Tema",
+    "notifications": "Notificações",
+    "language": "Idioma da interface",
+    "save": "Salvar"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "retry": "Tentar novamente",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "finish": "Finalizar"
+  },
+  "errors": {
+    "generic": "Algo deu errado. Por favor, tente novamente.",
+    "network": "Erro de conexão. Verifique sua internet.",
+    "chromeAi": "Chrome AI não disponível. Algumas funcionalidades podem estar limitadas.",
+    "translation": "Erro ao traduzir. Tente novamente.",
+    "audio": "Erro ao reproduzir áudio."
+  }
+}
+

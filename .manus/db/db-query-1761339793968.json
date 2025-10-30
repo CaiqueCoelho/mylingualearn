@@ -1,0 +1,80 @@
+{
+  "query": "SELECT id, LEFT(title, 50) as title, LENGTH(body) as body_length, isScraped, LEFT(sourceUrl, 50) as url FROM articles ORDER BY createdAt DESC LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2U1m8QtvRs7KSsb.root --database gEvA5pFfHJY7UujAHBKvxH --execute SELECT id, LEFT(title, 50) as title, LENGTH(body) as body_length, isScraped, LEFT(sourceUrl, 50) as url FROM articles ORDER BY createdAt DESC LIMIT 10;",
+  "rows": [
+    {
+      "id": "803b2ba8ff5dbd24277a7612a8a1c38d",
+      "title": "Century-old mystery of the ginger cat finally unlo",
+      "body_length": "67",
+      "isScraped": "0",
+      "url": "https://www.themirror.com"
+    },
+    {
+      "id": "3677138ddd51b2ce757233c34f94895f",
+      "title": "Molecular snapshots reveal how the body knows it’s",
+      "body_length": "1505",
+      "isScraped": "1",
+      "url": "https://news.northwestern.edu"
+    },
+    {
+      "id": "7cba0ef40a0d8e226200c8be8f090628",
+      "title": "Messier 57 (aka 6720), the Lady of the Rings: an i",
+      "body_length": "89",
+      "isScraped": "0",
+      "url": "https://news.google.com"
+    },
+    {
+      "id": "42d711a3a3161980a73fc52672cfee45",
+      "title": "Speed camera thresholds were meant to be consisten",
+      "body_length": "5083",
+      "isScraped": "1",
+      "url": "https://www.thestar.com"
+    },
+    {
+      "id": "09221c72bdf88d42aded7472cd186f74",
+      "title": "What’s next for carbon removal?",
+      "body_length": "331",
+      "isScraped": "1",
+      "url": "https://www.technologyreview.com"
+    },
+    {
+      "id": "23e93636ab05ae3518c1758eb2f4d533",
+      "title": "Sturgis Bancorp, Inc. Declares Quarterly Cash Divi",
+      "body_length": "5091",
+      "isScraped": "1",
+      "url": "https://www.bhpioneer.com"
+    },
+    {
+      "id": "07459e3d10c25b4f43925def79dfcb6f",
+      "title": "How to watch Mexico City Grand Prix 2025: live str",
+      "body_length": "807",
+      "isScraped": "1",
+      "url": "https://www.tomsguide.com"
+    },
+    {
+      "id": "76c92608133b5aab37240ea90e59a581",
+      "title": "Valley schools tackle AI, Sayre to vote on policy ",
+      "body_length": "5015",
+      "isScraped": "1",
+      "url": "https://www.thedailyreview.com"
+    },
+    {
+      "id": "2360726ba6bf57dbb6469fdcba3d7c4c",
+      "title": "NGC 6960, a dramatic insight on stellar evolution:",
+      "body_length": "1286",
+      "isScraped": "1",
+      "url": "https://news.google.com"
+    },
+    {
+      "id": "885e73b2469c5db11ea4027d70908279",
+      "title": "What’s next for carbon removal?",
+      "body_length": "226",
+      "isScraped": "0",
+      "url": "https://turks.us"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tbody_length\tisScraped\turl\n803b2ba8ff5dbd24277a7612a8a1c38d\tCentury-old mystery of the ginger cat finally unlo\t67\t0\thttps://www.themirror.com\n3677138ddd51b2ce757233c34f94895f\tMolecular snapshots reveal how the body knows it’s\t1505\t1\thttps://news.northwestern.edu\n7cba0ef40a0d8e226200c8be8f090628\tMessier 57 (aka 6720), the Lady of the Rings: an i\t89\t0\thttps://news.google.com\n42d711a3a3161980a73fc52672cfee45\tSpeed camera thresholds were meant to be consisten\t5083\t1\thttps://www.thestar.com\n09221c72bdf88d42aded7472cd186f74\tWhat’s next for carbon removal?\t331\t1\thttps://www.technologyreview.com\n23e93636ab05ae3518c1758eb2f4d533\tSturgis Bancorp, Inc. Declares Quarterly Cash Divi\t5091\t1\thttps://www.bhpioneer.com\n07459e3d10c25b4f43925def79dfcb6f\tHow to watch Mexico City Grand Prix 2025: live str\t807\t1\thttps://www.tomsguide.com\n76c92608133b5aab37240ea90e59a581\tValley schools tackle AI, Sayre to vote on policy \t5015\t1\thttps://www.thedailyreview.com\n2360726ba6bf57dbb6469fdcba3d7c4c\tNGC 6960, a dramatic insight on stellar evolution:\t1286\t1\thttps://news.google.com\n885e73b2469c5db11ea4027d70908279\tWhat’s next for carbon removal?\t226\t0\thttps://turks.us\n",
+  "stderr": "",
+  "execution_time_ms": 49
+}
